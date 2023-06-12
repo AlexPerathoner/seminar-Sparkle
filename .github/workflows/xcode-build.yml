@@ -35,3 +35,4 @@ jobs:
           -resultBundlePath TestResults \
           -test-iterations 10 \
           CODE_SIGNING_ALLOWED=NO || exit 1
+          
