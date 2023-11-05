@@ -49,7 +49,7 @@ class SUTestApplicationTest: XCTestCase
         sleep(launchSleep)
         
         let menuBarsQuery = app.menuBars
-        menuBarsQuery.menuBarItems["Sparkle Test App"].click()
+        menuBarsQuery.menuBarItems["Sparkle Test App"].click() // Environment Issue / also in Runner?
         
         let checkForUpdatesMenuItem = menuBarsQuery.menuItems["Check for Updates…"]
         if checkForUpdatesMenuItem.isEnabled {
