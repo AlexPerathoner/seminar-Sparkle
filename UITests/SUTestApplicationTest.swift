@@ -15,6 +15,6 @@ class SUTestApplicationTest: XCTestCase
 {
     
     func testOverhead() {
-        sleep(60*5) // 5 minutes
+        sleep(60) // 5 minutes
     }
 }
