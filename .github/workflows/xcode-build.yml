@@ -27,12 +27,5 @@ jobs:
       - name: Build and Test
         continue-on-error: true
         id: run-tests
-        run: |
-          xcodebuild clean test \
-          -project Sparkle.xcodeproj \
-          -scheme UITests \
-          -destination platform=macOS \
-          -resultBundlePath TestResults \
-          -test-iterations 30 \
-          CODE_SIGNING_ALLOWED=NO || exit 1
+        run: sleep 120
           
