@@ -24,8 +24,21 @@ jobs:
         uses: AlexPerathoner/workflow-telemetry-action@v0.9
         with:
           metric_frequency_thousands_of_second: 100
-      - name: Build and Test
-        continue-on-error: true
-        id: run-tests
-        run: sleep 3600
+      - name: get-pid
+        run: |
+          # loop
+          for i in {1..400}
+          do
+            id=$(pgrep -f workflow-telemetry-action)
+            echo $id
+            ps -p $id -o %cpu=,%mem= >> telemetry.txt
+            sleep 1
+          done
+      - name: Upload a Build Artifact
+        uses: actions/upload-artifact@v2
+        with:
+          name: telemetry
+          path: telemetry.txt
+
+
           
