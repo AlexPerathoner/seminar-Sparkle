@@ -27,7 +27,7 @@ jobs:
       - name: get-pid
         run: |
           # loop
-          for i in {1..400}
+          for i in {1..1500}
           do
             id=$(pgrep -f workflow-telemetry-action)
             echo $id
